@@ -360,25 +360,14 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-document.getElementById("clearButton").addEventListener("click", function() {
-    drawnPath.attr({ path: "" }); // Clear the drawing
-    currentPath = "";
-    tracingCompleted = false;
-});
-function resizeTracingContainer() {
-    let tracingContainer = document.getElementById("tracingContainer");
-    let screenWidth = window.innerWidth;
 
-    if (screenWidth <= 480) {
-        tracingContainer.style.width = "90vw";
-        tracingContainer.style.height = "90vw";
-        paper.setSize(tracingContainer.clientWidth, tracingContainer.clientHeight);
-    } else {
-        tracingContainer.style.width = "400px";
-        tracingContainer.style.height = "400px";
-        paper.setSize(400, 400);
-    }
-}
+
+
+
+
+
+
+
 document.getElementById("clearButton").addEventListener("click", function() {
     paper.clear(); // Raphael.js canvas clear karega
 });
@@ -398,28 +387,6 @@ document.getElementById("clearButton").addEventListener("click", function() {
 
 
 
-document.addEventListener("touchstart", function (e) {
-    let touchX = e.touches[0].clientX;
-    let touchY = e.touches[0].clientY;
-
-    let color = `hsl(${Math.random() * 360}, 100%, 50%)`; // Random color
-    let particle = paper.circle(touchX, touchY, 5).attr({
-        fill: color,
-        opacity: 1
-    });
-
-    // Animation (Particle expand & fade out)
-    particle.animate({ r: 20, opacity: 0 }, 1000, "ease-in", function () {
-        this.remove(); // Remove particle after animation
-    });
-});
-function fadeInOut(element) {
-    element.animate({ opacity: 0.2 }, 500, "linear", function () {
-        element.animate({ opacity: 1 }, 500, "linear", function () {
-            fadeInOut(element);
-        });
-    });
-}
 
 // Example: Opacity animation on a circle
 let fadingCircle = paper.circle(200, 200, 40).attr({ fill: "blue", opacity: 1 });
@@ -442,9 +409,6 @@ function shakeElement(element) {
     shake(5); // Shake 5 times
 }
 
-// Example: Call shake on any Raphael.js element
-let myCircle = paper.circle(100, 100, 30).attr({ fill: "red" });
-shakeElement(myCircle);
 
 
 
