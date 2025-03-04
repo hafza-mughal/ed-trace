@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabet Tracing</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="Trace.css">
+</head>
+<body>
+    <div id="tracingContainer">
+            <span id="currentLetter"></span>
+    </div>
+    <button id="clearButton">Clear</button>
+    <img src="C-H/hand.png" class="custom-cursor" id="cursor">
+    <audio id="clapSound" src="C-H/clap.mp3"></audio>
+    <script>
+const letters = [
+{"letter": "p", "path": "M204 114 C114 114 114 294 204 294 C294 294 294 114 204 114"},
+]
+</script>
+<script src="Trace.js"></script>
+</body>
+</html>
